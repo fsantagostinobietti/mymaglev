@@ -29,3 +29,10 @@ https://user-images.githubusercontent.com/6057026/135050719-c478f0a1-0ded-451e-b
 * Resistors - 5k ohm, 330 ohm 
 * Power supply 12V DC
 
+## Control algorithm
+*TODO*
+
+## Next steps
+* Improve stability
+* Understand why hall sensor placed just below electromagnet doesn't work for me
+* Understand why simple "switch on/switch off" control algorithm is not enough to maintain stable levitation in my project
