@@ -30,6 +30,13 @@ https://user-images.githubusercontent.com/6057026/135050719-c478f0a1-0ded-451e-b
 * Power supply 12V DC
 
 ## Control algorithm
+To obtain levitation even for a small permanent magnet a [closed control loop](https://en.wikipedia.org/wiki/Control_theory#Open-loop_and_closed-loop_(feedback)_control) is needed.
+
+Simplest algoritm is a switch on/off near the equilibrium position. Sometimes it is called [the easy way]()
+I was not able to implement this control in my project, since it was too instable.
+
+I had to implement a more sofisticated [PID](https://en.wikipedia.org/wiki/Control_theory#PID_feedback_control) control algorithm.
+
 *TODO*
 
 ## Next steps
