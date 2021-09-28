@@ -17,4 +17,12 @@ is free from electromagnet interference.
 <img src="/doc/circuit.png" width="800" />
 
 ## Bill of materials
-*TODO*
+* Electromagnet ZYE1-P50/27 (DC=12V, R=22ohm, L=30mH (?))
+* Neodymium magnets N52 (12x3 mm)
+* Hall sensor 49E (TO-92 package)
+* Arduino Uno R3 (compatible clone)
+* Transistor NPN PN2222A (TO-92 package)
+* Diode 1N4007
+* Resistors - 5k ohm, 330 ohm 
+* Power supply 12V DC
+
