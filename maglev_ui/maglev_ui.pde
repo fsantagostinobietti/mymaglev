@@ -1,3 +1,7 @@
+/*
+ * GUI frontend for arduino controller.
+ * Serial line it's used for bi-directional communication with Arduino.
+ */
 import processing.serial.*;
 
 
