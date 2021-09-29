@@ -1,23 +1,25 @@
 /* Author: Santa
  * 
  * Controller use hall effect sensor to measure object distance (few centimeters). When
- * distance is above the threshold 
- * Electromagnet, controlled by a transistor, is turn ON. 
- * Viceversa when distance is lowen than threshold electromagnet is turned OFF.
- * Threshold value can be changed by an external program using a simple serial protocol.
+ * distance is above the threshold Electromagnet power is increased. 
+ * Viceversa when distance is lowen than threshold electromagnet power is decreased.
+ * Threshold value can be changed by an external Processing program using a simple serial protocol.
  * 
  * TODO:
  *  - replace digitalRead()/digitalWrite() with fastDigital*()
  */
 
 #define HALL_PIN 0  // analog input pin 0
-int threshold, hallVal, hallValOld;
+int threshold;
+float hallVal, hallValOld;
 
 byte power; // electromagnet current power (0: OFF, 255: full power)
 
 // PID settings
 byte K;   // used to balance object weight 
 byte Kp, Ki, Kd;  // usual PID parameters
+
+#define ROUND(v) (int)(v+0.5)
 
 void setup() {
   threshold = -1; // undef
@@ -95,8 +97,9 @@ void sendHallValue() {
     return;  //nop
   
   int lo, hi;
-  lo = hallVal & 0xff;
-  hi = (hallVal >> 8) & 0xff;
+  int val = ROUND(hallVal);
+  lo = val & 0xff;
+  hi = (val >> 8) & 0xff;
   Serial.write( VAL_CODE );
   Serial.write( lo );
   Serial.write( hi );
@@ -179,11 +182,12 @@ void initPID() {
   K = Kp = Ki = Kd = 0;
 }
 
-byte computePower(int hallVal, int hallValOld, int threshold) {
-  //TODO PID rule power = K + Kp*err + Kd*diff_err + Ki*sum_err
-  int err = hallVal - threshold;
-  int diff_err = hallVal - hallValOld;
-  int pid = (Kp*err + 10*Kd*diff_err)/10;
+
+byte computePower(float hallVal, float hallValOld, int threshold) {
+  // PID rule power = K + Kp*err + Kd*diff_err + Ki*sum_err
+  float err = hallVal - threshold;
+  float diff_err = hallVal - hallValOld;
+  int pid = ROUND(0.1*Kp*err + Kd*diff_err);  // round func increases magne stability 
   int pw = K + pid;
   pw = max(0, min(255, pw));  // p in [0, 255]
   return (byte)pw;
