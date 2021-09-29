@@ -1,9 +1,9 @@
 import processing.serial.*;
 
 
-final int INIT_THRESHOLD = 545;
-final int INIT_PID_K = 100; // 0 -255
-final int INIT_PID_KP = 30;  // > 0
+final int INIT_THRESHOLD = 615;
+final int INIT_PID_K = 195; // 0 -255
+final int INIT_PID_KP = 35;  // > 0
 final int INIT_PID_KD = 40;
 final int UNDEF = -1;
 
