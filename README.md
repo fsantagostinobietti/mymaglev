@@ -39,7 +39,7 @@ Simplest algoritm is a switch on/off near the equilibrium position. Sometimes it
 I was not able to implement this control in my project, since it was too instable.
 
 I had to implement a more sofisticated [PID](https://en.wikipedia.org/wiki/Control_theory#PID_feedback_control) control algorithm.
-In this scenario Arduino controls electromagnet power in a nearly continuous way from 0 (off) to maximum strength. This is achieved using a [PWM](https://en.wikipedia.org/wiki/Pulse-width_modulation) signal outputted by one of arduino digital pin.
+In this scenario Arduino controls electromagnet power in a nearly continuous way from 0 (off) to maximum strength. This is achieved using a [PWM](https://en.wikipedia.org/wiki/Pulse-width_modulation) signal outputted by one of Arduino digital pins.
 
 ## Next steps
 * Improve stability
