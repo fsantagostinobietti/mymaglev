@@ -19,6 +19,9 @@ https://user-images.githubusercontent.com/6057026/135050719-c478f0a1-0ded-451e-b
 ## Circuit schema
 <img src="/doc/circuit.png" width="800" />
 
+#### Note 
+Diode in parallel with electromagnet it's very important since it works as a [flyback diode](https://en.wikipedia.org/wiki/Flyback_diode).
+
 ## Bill of materials
 * Electromagnet ZYE1-P50/27 (DC=12V, R=22ohm, L=30mH (?))
 * Neodymium magnets N52 (12x3 mm)
@@ -32,14 +35,20 @@ https://user-images.githubusercontent.com/6057026/135050719-c478f0a1-0ded-451e-b
 ## Control algorithm
 To obtain levitation even for a small permanent magnet a [closed control loop](https://en.wikipedia.org/wiki/Control_theory#Open-loop_and_closed-loop_(feedback)_control) is needed.
 
-Simplest algoritm is a switch on/off near the equilibrium position. Sometimes it is called [the easy way]()
+Simplest algoritm is a switch on/off near the equilibrium position. Sometimes it is called [the easy way](https://create.arduino.cc/projecthub/jsirgado/magnet-levitation-with-arduino-eeeee4#code).
 I was not able to implement this control in my project, since it was too instable.
 
 I had to implement a more sofisticated [PID](https://en.wikipedia.org/wiki/Control_theory#PID_feedback_control) control algorithm.
-
-*TODO*
+In this scenario Arduino controls electromagnet power in a nearly continuous way from 0 (off) to maximum strength. This is achieved using a [PWM](https://en.wikipedia.org/wiki/Pulse-width_modulation) signal outputted by one of arduino digital pin.
 
 ## Next steps
 * Improve stability
 * Understand why hall sensor placed just below electromagnet doesn't work for me
 * Understand why simple "switch on/switch off" control algorithm is not enough to maintain stable levitation in my project
+
+## Related projects
+* https://learn.sparkfun.com/tutorials/magnetic-levitation
+* https://peterneufeld.wordpress.com/category/magnetic-levitation/
+* http://johann.langhofer.net/electronics/
+* https://create.arduino.cc/projecthub/jsirgado/magnet-levitation-with-arduino-eeeee4
+* https://www.reidb.net/MagLevitator.html
