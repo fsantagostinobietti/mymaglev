@@ -22,7 +22,7 @@ https://user-images.githubusercontent.com/6057026/135050719-c478f0a1-0ded-451e-b
 #### Note 
 Diode in parallel with electromagnet it's very important since it works as a [flyback diode](https://en.wikipedia.org/wiki/Flyback_diode).
 
-If you want to deepdive in the role of resistor used in pair with flyback diode have a look [here](/doc/resistor-for-flyback-diode.md).
+If you want to deep dive in the role of resistor used in pair with flyback diode have a look [here](/doc/resistor-for-flyback-diode.md).
 
 ## Bill of materials
 * Electromagnet ZYE1-P50/27 (DC=12V, R=22ohm, L=30mH (?))
@@ -43,8 +43,14 @@ I was not able to implement this control in my project, since it was too instabl
 I had to implement a more sofisticated [PID](https://en.wikipedia.org/wiki/Control_theory#PID_feedback_control) control algorithm.
 In this scenario Arduino controls electromagnet power in a nearly continuous way from 0 (off) to maximum strength. This is achieved using a [PWM](https://en.wikipedia.org/wiki/Pulse-width_modulation) signal outputted by one of Arduino digital pins.
 
+## Stability improvements
+Small changes in design (hardware or software) can affect stability a lot. For example:
+* Intruducing a small delay (less than a millisecond) between changes of electromagnet power, improved stability in my project.
+  
+  This is due to PWM implementation behaviuor: every time a change in PWM value occurs, its pin output is reset to ON value. This produces a spike in the output power. To mitigate this issue a dalay needs to be introduced to avoid too frequent changes.
+
 ## Next steps
-* Improve stability
+* Improve stability even further
 * Understand why hall sensor placed just below electromagnet doesn't work for me
 * Understand why simple "switch on/switch off" control algorithm is not enough to maintain stable levitation in my project
 
