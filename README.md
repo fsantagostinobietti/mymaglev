@@ -22,6 +22,8 @@ https://user-images.githubusercontent.com/6057026/135050719-c478f0a1-0ded-451e-b
 #### Note 
 Diode in parallel with electromagnet it's very important since it works as a [flyback diode](https://en.wikipedia.org/wiki/Flyback_diode).
 
+If you want to deepdive in the role of resistor used in pair with flyback diode have a look [here](/doc/resistor-for-flyback-diode.md).
+
 ## Bill of materials
 * Electromagnet ZYE1-P50/27 (DC=12V, R=22ohm, L=30mH (?))
 * Neodymium magnets N52 (12x3 mm)
