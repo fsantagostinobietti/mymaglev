@@ -16,6 +16,10 @@ is free from electromagnet interference.
 ## Demo
 https://user-images.githubusercontent.com/6057026/135050719-c478f0a1-0ded-451e-b2f9-01925771c97f.mp4
 
+https://user-images.githubusercontent.com/6057026/135732176-58ad71ac-b2bb-4533-a6b8-07d4174d8150.mp4
+
+
+
 ## Circuit schema
 <img src="/doc/circuit.png" width="800" />
 
