@@ -33,9 +33,9 @@ If you want to deep dive in the role of resistor used in pair with flyback diode
 * Neodymium magnets N52 (12x3 mm)
 * Hall sensor 49E (TO-92 package)
 * Arduino Uno R3 (compatible clone)
-* Transistor NPN PN2222A (TO-92 package)
+* Transistor N-channel MOSFET IRF1404 (TO-220 package)
 * Diode 1N4007
-* Resistors - 5k ohm, 330 ohm 
+* Resistors - 100k ohm, 330 ohm 
 * Power supply 12V DC
 
 ## Control algorithm
