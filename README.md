@@ -26,7 +26,9 @@ https://user-images.githubusercontent.com/6057026/135732176-58ad71ac-b2bb-4533-a
 #### Note 
 Diode in parallel with electromagnet it's very important since it works as a [flyback diode](https://en.wikipedia.org/wiki/Flyback_diode).
 
-If you want to deep dive in the role of resistor used in pair with flyback diode have a look [here](/doc/resistor-for-flyback-diode.md).
+If you want to deep dive in the role of resistor R2 used in pair with flyback diode have a look [here](/doc/resistor-for-flyback-diode.md).
+
+Resistor R1 is used as a [pull-down resistor](https://forum.arduino.cc/t/mosfet-pull-down-resistor-placement/202597/8) for MOSFET gate input pin.
 
 ## Bill of materials
 * Electromagnet ZYE1-P50/27 (DC=12V, R=22ohm, L=30mH (?))
